@@ -1,7 +1,3 @@
-#set page(margin: (x: .5cm, y: .5cm),
-          columns: 3,
-          width: 297mm, height: 210mm)
-
 = Algebra
 
 == Definitions
@@ -71,7 +67,11 @@ $ a^(phi(n)) eq.triple 1 mod n text("and to make FLT,") phi(p) = p-1 $
 
 === Symmetries
 
+#lorem(100)
+
 === Permutations
+
+#lorem(60)
 
 == Cyclic groups and subgroups
 
@@ -143,7 +143,7 @@ $ |text("Orb")_G (x)| times |text("Stab")_G (x)| = |G| $
 ==== Misc
 
 - Let $G$ act on $X$,
-$ x tilde y <=> y = g dot x text("for some") g in G$
+$ x tilde y <=> y = g dot x text("for some") g in G $
 defines an equivilence relation on G. The equivilence classes are the orbits of $G$.
 - The Stabilizer of $x$ is a subgroup of $G$.
 
