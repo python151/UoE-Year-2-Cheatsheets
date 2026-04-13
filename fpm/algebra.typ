@@ -115,4 +115,38 @@ An isomorphism $G -> G$ is an automorphism of $G$.
 
 == Group Actions
 
+=== Basic Definitions
+
+==== Group Actions
+
+- A (left) action of G on X is $G times X -> X$, written $(g, x) arrow.r.bar g
+dot x$ such that
+$ g_1 dot (g_2 dot x) = (g_1 dot g_2) dot x text("and") e dot x = x $
+Take X = G,
+- A right action is defined $g dot h = h g^(-1)$ for all $g in G$ and $h in X$.
+- A conjugate action defined $g dot h = g h g^(-1)$ for all $g in G$ and $h in X$.
+
+==== Orbits and Stabilizers
+
+Let $G$ act on $X$, and let $x in X$. The stabilizer of $x$ is defined to be
+$ text("Stab")_G (x) = {g in G | g dot x = x} $
+Let $G$ act on $X$, and let $x in X$. The orbit of $x$ is defined to be
+$ text("Orb")_G (x) = {g dot x | g in G} $
+
+=== Properties
+
+==== Orbit-Stabilizer theorem
+
+Suppose $G$ is a finite group acting on the set $X$, and let $x in X$. Then,
+$ |text("Orb")_G (x)| times |text("Stab")_G (x)| = |G| $
+
+==== Misc
+
+- Let $G$ act on $X$,
+$ x tilde y <=> y = g dot x text("for some") g in G$
+defines an equivilence relation on G. The equivilence classes are the orbits of $G$.
+- The Stabilizer of $x$ is a subgroup of $G$.
+
 == Counting and Cayley
+
+
