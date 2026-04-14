@@ -1,5 +1,9 @@
 #import "utils.typ": grouped
 
+#let grouped_internal(content, color: black) = grouped(content, color: color)
+#let grouped(content, color: black) = grouped_internal(content, color: color)
+// Change defaults for this file in this function ^^^
+
 = Analysis
 
 == The Real Numbers
