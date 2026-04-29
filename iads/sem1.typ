@@ -106,23 +106,25 @@ Fixing rules:
 - Red uncle rule: if a red node has a red uncle, both parent and uncle are recolored black, and the grandparent red, continue recursively
 - If the root is colored red, recolor to black.
 == Max heaps
-Definition:
+=== Definition:
 - A complete binary tree
 - The value of the root node must be the largest among all its decendent nodes
 - The left and right nodes must have the same property
-Array representation: if a node is at index $i$, then
+=== Array representation
+If a node is at index $i$, then
 - $"Left"(i) = 2 i + 1$
 - $"Right"(i) = 2 i + 2$
 - $"Parent"(i) = (i-1)/2$
-To insert a node:
+=== Max-Heap-Insert
 - Add at the end of heap, sift-down to fix (swap with parent until parent is greater), is $Theta(log n)$ in all cases
-
+=== Extract-Max
+- Gets root node value; swaps first and last elements; removes last; sift-down to fix.
 === Build-Max-Heap
 - Turns an array into a valid max-heap
 - Assume the largest is the given index, if a child is less than the root, swap nodes and recursively call on that subtree.
 - Apply this to all nodes in reverse order (so leaves first), gives $O(n)$ due to a geometric series from the guaruntees of already being fixed (since we start with the leaves)
 == HeapSort
-- Use heapify (O(n)), then remove max elements ($O(log n)$ each time) one by one, getting a $O(n + n log n) = O(n log n)$ algorithm.
+- Use Build-Max-Heap (O(n)), then Extract-Max ($O(log n)$ each time) one by one, getting a $O(n + n log n) = O(n log n)$ algorithm.
 - Max-Insert-Sort works by inserting sequentially ($O(n log n)$) and doing the same.
 == QuickSort
 - Split $A$ on some element (usually the last), putting all elements less than the parititon element before it, and all elements greater than the partition after it
@@ -130,10 +132,9 @@ To insert a node:
 - Partition can be done in-place at $O(n)$ time and $O(1)$ space
 - $Theta(n log n)$ time best and average case, $Theta(n^2)$ in the worst case.
 == BFS
-- Starting at some node, add each neighbor to a stack
-- Mark node as visited
+- Start at some node; add each neighbor to a stack; mark node as visited
 - While the stack isn't empty:
-    - Pop a node from the stack, add all neighbors to the stack, mark as visited
+    - Pop a node from the stack; add all neighbors to the stack; mark node as visited
 === DFS
 - Same as BFS, but with Queue instead of Stack
 == Topological Sort
