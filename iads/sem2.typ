@@ -1,13 +1,11 @@
 == Dijkstra's Algorithm
 - Fills in 2 arrays: $d$ and $pi$; $d[i] := "distance from start to node" i$; $d "init'd to" infinity$; $pi[i] := "previous node in optimal path"$; $pi "init'd to"$ `NIL`
-- Start with $v_0$; Add $v_0$ to $S$; $d[v_0]=0$
+- Start with $v_0$; Add $v_0$ to $S$ (Min-heap); $d[v_0]=0$
 - While $S$ is not empty
-    - Get $v$ from S with $min d[v]$; for each fringe vertex from $v$, update $d$ and $pi$ iff the new path is better than the old path; If we update the path for some $v'$, add it to $S$.
-- Worst-case time $Theta(|V|^2)$ algorithm.
-=== Min-Heap Dijkstra's
-- Replace $S$ with a min-heap; get elements with Extract-Min; add elements with Insert.
+    - Get $v$ with Extract-Min; for each fringe vertex from $v$, update $d$ and $pi$ iff the new path is better than the old path; If we update the path for some $v'$, Insert into $S$.
+- Worst-case time  algorithm.
 - Worst-case time $Theta((|E| + |V|)log |V|)$ algorithm.
-- Using a fibinacci-heap gives us $Theta(|E| + |V|log |V|)$.
+- Using a fibinacci-heap gives us $Theta(|E| + |V|log |V|)$, using a list with a loop for the min gives $Theta(|V|^2)$.
 
 == Coin-Changing Greedy Algorithm
 - *Prob:* reach $v$ with coins $c_1, c_2, ..., c_k$, with $c_1=1$ and $c_(i+1) lt c_i$
@@ -107,7 +105,11 @@ $ d(m, n) = 1 + min{d(m-1, n-1), #linebreak()
 == Greedy IS
 - There exists no constant approximation factor $alpha$ in polynomial time for IS (assuming P $eq.not "NP"$)
 == Register Machines
+- Fixed set of registers (A, B, ...) capable of storing some natural number, simple operations on registers.
 == Halting Problem
-== Russell's Paradox
+- Given a Register Machine, $m$, there exists no algorithm to check if $m$ halts; Many halting problem instances come from mathematical questions involving existence.
 == Diophantine Equation Solvability
+- The integer solvability of diophantine equations (i.e. Given a polynomial $P(x_1, x_2, ...)$ and an integer $n$, is there an integer assignment of $x$'s to satisfy $P(x_1, x_2, ...) = n$?) becomes an unbounded search problem, thus is subject to the halting problem.
 == Post's Word Problem
+- Given two sets of strings $S, T$ check if there exists a string that can be composed of concatenations of elements from $S$ and from $T$.
+

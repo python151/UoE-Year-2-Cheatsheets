@@ -36,13 +36,6 @@ def ExpMod(a, n, m):
         return (d*d*a) % m
 ```
 
-== Bubble Sort
-
-- Effectively an in-place version of Insertion Sort
-- Go through each element and swap until the top element is in the top spot
-- Loop through doing the same thing
-- $Theta(n^2)$ in all cases
-
 == Merge Sort
 
 Procedure:
@@ -83,15 +76,14 @@ $Theta(n+m)$ in the best and worse case.
 - Implementation dependent, but often faster, albiet with high constants
 === Balanced trees
 - Balanced Trees (like R-B trees) give us $Theta(log n)$ for all operations.
-== Hashing
-=== Bucket-list
+== Bucket-list Hashing
 - Use a standard hashing function into a fixed-length array
 - When we have a collision, add to list
 - Search through list for operations, gives us $Theta(n)$ operations in the worst case.
-=== Probing
+== Probe Hashing
 - Store values in the table instead of a list
 - Have a hash function like $H(n, i)$ that hashes and if we have a collision allows us to increment $i$. Still gives us $Theta(n)$ worst-case, but usually better average and best-cases.
-=== Perfect hashes
+== Perfect Hashes
 - Have a hash function that's a perfect bijection (1-to-1 mapping)
 - Only possible in general for fixed-sized spaces, but $Theta(1)$ for all operations in the worst case.
 == Ordered-binary trees (or Binary Search Tree / BST)
