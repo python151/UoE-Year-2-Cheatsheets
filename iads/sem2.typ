@@ -51,10 +51,37 @@ $ d(m, n) = 1 + min{d(m-1, n-1), #linebreak()
 - Fill in the tables `mlp`, `prev`; $"mlp"[i, q] :=$ the cost of the most likely path to generate $s_i = s[1...i]$, ending in $q in Q$; `prev` is the state which optimizes $"mlp"[i, q]$; Exploits relation $"mlp"[1, q] = pi_q dot b_(q,s_1)$ and $"mlp"[i>1, q] = min_(q^* in Q){"mlp"[i-1, q^*] dot p_(q^*, q) dot b_(q,s_i)}$
 - Fill in the tables from left to right $i=1$ to $n$; filling in each $q$ by checking every $q^*$; read off the most likely from `mlp` and `prev`.
 == Context-Free Grammars (CFGs)
+- A set of parsing rules for building abstract syntax trees; Consists of $Sigma$ terminals, $N$ non-terminals (disjoint from $Sigma$), Start symbol $S in N$, and Productions $X -> alpha$ for some $X in N$ and $alpha in (Sigma union N)^*$
 
-== Chompsky Normal Form
-== CYK Parsing
+== Chompsky Normal Form (CNF)
+- A grammar is in CNF if all rules are of the form $X -> Y Z$ for $X, Y, Z in N$ or $X -> alpha$ for some $X in N$ and $alpha in Sigma$.
+- Split rules with multiple symbols up like $X -> X_1X_2...X_n$ goes to $X -> X_1X_2'$, $X_2' -> X_2X_3'$, ...; Find all productions generating $epsilon$; Remove them, but add back rules in form $X -> Y alpha$ or $X -> alpha Y$ with $X -> alpha$ (where $Y$ is the nullable production); Remove unit productions $X->Y$, $Y->alpha$ gets replaced with $X->alpha$. For each terminal, $alpha$, add a non-terminal $Z_alpha -> alpha$, and rewrite rules to use $Z_alpha$ instead.
+== CYK Parsing (DP for CFGs)
+- *Prob:* Parse string into CFG syntax tree
+- We fill in a CYK parse table, `cyk`; $"cyk"[i,j] :=$ possible analyses of the substring $s_(i,j) = s[i..j]$ ($i < j$); we fill from smallest substrings to larger substrings (starting with the diagnal for instance)
+- Time is always $Theta(m n^3)$, where $m$ is grammar size and $n$ is strings size.
 == LL(1)
+- LL(1) is the class of languages that can be parsed completely with the previous production and a single new token at each step; Very fast parsing runs in only $Theta(n)$; Not always possible and less flexible than arbitrary CFGs.
+- We're given a parse-table, like
+#align(center)[
+#table(columns: 4,
+[], [(], [)], [\$],
+[S], [$S -> T S$], [$S -> epsilon$], [$S -> epsilon$],
+[T], [$T -> (S)$], [], [])
+]
+- Example parse: ()\$
+#align(center)[
+#table(columns: 3,
+[Action], [Input], [Stack],
+[], [], [S],
+[Lookup \(, S], [\(\)\$], [TS],
+[Lookup \(, T], [\(\)\$], [(S)S],
+[Match \(], [\)\$], [S\)S],
+[Lookup \), S], [\)\$], [\)S],
+[Match \)], [\$], [S],
+[Lookup \$, S], [\$], [])
+]
+
 == Euler Tours (ET) and Hamiltonian Cycles (HC)
 == Decision Problems
 == NP-Completeness
