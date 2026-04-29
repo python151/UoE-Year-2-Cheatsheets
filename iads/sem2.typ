@@ -82,16 +82,30 @@ $ d(m, n) = 1 + min{d(m-1, n-1), #linebreak()
 [Lookup \$, S], [\$], [])
 ]
 
-== Euler Tours (ET) and Hamiltonian Cycles (HC)
 == Decision Problems
+- A problem that can be represented as a set of potential solutions where $Q(J) = 1$ if there is a solution in $S$ that for the instance $J$ and $Q(J) = 0$ otherwise is a decision problem.
+- An individual solution in $S$ is called a certificate, and decision problems with a polynomial time certificate verification algorithm are in NP.
 == NP-Completeness
-== SAT
-== Independent Sets (IS)
+- A problem is NP-complete if it's in NP and can be reduced ($R lt.eq_P Q$) to every other problem in NP. Notably, reducing to a single NP-complete problem (3-SAT, HC, IS, etc.) is enough to satisfy this.
+== Euler Tours (ET) and Hamiltonian Cycles (HC)
+- An ET of a graph is a path that traverses every edge exactly once, an HC of a graph is a path that traverses every node exactly once.
+- ET can be accelerated with maffs (graph with only even degree vertices has an Euler Tour; yielding $Theta(m + n)$ algorithm), HC is *NP-complete*.
+== SAT (NP-Complete)
+- $Phi = C_1 and C_2 and ... and C_n$ over variables $X={x_1, ..., x_n}$, with $C_i = or.big_(x_i in X_i) x_i$. Is there a satisfying assignment for $Phi$?
+== Ind. Sets (IS) (NP-Complete)
+- Given a graph and a number $k in NN$, is there an Independent Set of size $k$ for the graph. An Independent Set is a set of nodes such that no two nodes in the set have an edge connecting them.
+- In other words, an edge represents that two nodes are mutually exclusive.
+== Vertex Covers (NP-Complete)
+- Given a graph and a number $k$, is there a vertex cover of size $lt.eq k$? A vertex cover is a set of nodes that connect to every edge (i.e. for every edge, one side of the edge is in the set).
 == 3-SAT to IS Reduction
+- For every clause, add the 3 literals (variables) of the clause as nodes, connecting them in a triangle; Connect every pair of nodes representing negated assignments ($x_i$ and $not x_i$); Then IS of size $m <==> $ some satisfying assignment for $Phi$
 == Vertex Cover Approximation Algorithm
+- Start with edge $e = (u, v)$; Add $u, v$ to the $C$; Remove edges connected to $u$ or $v$; Repeat until no edges left; Return $C$.
+- This is a 2-approximation, returning a set at most double the size of the optimal set.
 == Greedy 3-SAT
+- There exists a $7/8$-approximation for MAX 3-SAT in P time.
 == Greedy IS
-== DPLL and Recursive-Backtracking (SAT)
+- There exists no constant approximation factor $alpha$ in polynomial time for IS (assuming P $eq.not "NP"$)
 == Register Machines
 == Halting Problem
 == Russell's Paradox
