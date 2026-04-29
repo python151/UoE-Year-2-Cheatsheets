@@ -1,9 +1,8 @@
 == Dijkstra's Algorithm
 - Fills in 2 arrays: $d$ and $pi$; $d[i] := "distance from start to node" i$; $d "init'd to" infinity$; $pi[i] := "previous node in optimal path"$; $pi "init'd to"$ `NIL`
-- Start with $v_0$; Add $v_0$ to $S$ (Min-heap); $d[v_0]=0$
-- While $S$ is not empty
-    - Get $v$ with Extract-Min; for each fringe vertex from $v$, update $d$ and $pi$ iff the new path is better than the old path; If we update the path for some $v'$, Insert into $S$.
-- Worst-case time  algorithm.
+- Start with $v_0$; Add $v_0$ to $H$ (Min-heap); $d[v_0]=0$
+- While $H$ is not empty
+    - Get $v$ with Extract-Min; for each fringe vertex from $v$, update $d$ and $pi$ iff the new path is better than the old path; If we update the path for some $v'$, Insert into $H$.
 - Worst-case time $Theta((|E| + |V|)log |V|)$ algorithm.
 - Using a fibinacci-heap gives us $Theta(|E| + |V|log |V|)$, using a list with a loop for the min gives $Theta(|V|^2)$.
 
@@ -46,7 +45,7 @@ $ d(m, n) = 1 + min{d(m-1, n-1), #linebreak()
 - Also need $b_(q,x)$ for the prob of a state emitting a symbol $x$, and $pi_q$ for the prob of starting at $q$
 == Viterbi DP Algorithm
 - *Prob:* Given an HMM and a string, $s$ of size $n$, find the path that most likely generated $s$
-- Fill in the tables `mlp`, `prev`; $"mlp"[i, q] :=$ the cost of the most likely path to generate $s_i = s[1...i]$, ending in $q in Q$; `prev` is the state which optimizes $"mlp"[i, q]$; Exploits relation $"mlp"[1, q] = pi_q dot b_(q,s_1)$ and $"mlp"[i>1, q] = min_(q^* in Q){"mlp"[i-1, q^*] dot p_(q^*, q) dot b_(q,s_i)}$
+- Fill in the tables `mlp`, `prev`; $"mlp"[i, q] :=$ the cost of the most likely path to generate $s_i = s[1...i]$, ending in $q in Q$; `prev` is the state which optimizes $"mlp"[i, q]$; Exploits relation $"mlp"[1, q] = pi_q dot b_(q,s_1)$ and $"mlp"[i>1, q] = max_(q^* in Q){"mlp"[i-1, q^*] dot p_(q^*, q) dot b_(q,s_i)}$
 - Fill in the tables from left to right $i=1$ to $n$; filling in each $q$ by checking every $q^*$; read off the most likely from `mlp` and `prev`.
 == Context-Free Grammars (CFGs)
 - A set of parsing rules for building abstract syntax trees; Consists of $Sigma$ terminals, $N$ non-terminals (disjoint from $Sigma$), Start symbol $S in N$, and Productions $X -> alpha$ for some $X in N$ and $alpha in (Sigma union N)^*$

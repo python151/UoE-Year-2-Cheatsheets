@@ -106,11 +106,11 @@ Fixing rules:
 If a node is at index $i$, then
 - $"Left"(i) = 2 i + 1$
 - $"Right"(i) = 2 i + 2$
-- $"Parent"(i) = (i-1)/2$
+- $"Parent"(i) = floor.l (i-1)/2 floor.r$
 === Max-Heap-Insert
-- Add at the end of heap, sift-down to fix (swap with parent until parent is greater), is $Theta(log n)$ in all cases
+- Add at the end of heap, sift-up to fix (swap with parent until parent is greater), is $Theta(log n)$ in all cases
 === Extract-Max
-- Gets root node value; swaps first and last elements; removes last; sift-down to fix.
+- Gets root node value; swaps first and last elements; removes last; sift-up to fix.
 === Build-Max-Heap
 - Turns an array into a valid max-heap
 - Assume the largest is the given index, if a child is less than the root, swap nodes and recursively call on that subtree.
@@ -124,11 +124,11 @@ If a node is at index $i$, then
 - Partition can be done in-place at $O(n)$ time and $O(1)$ space
 - $Theta(n log n)$ time best and average case, $Theta(n^2)$ in the worst case.
 == BFS
-- Start at some node; add each neighbor to a stack; mark node as visited
+- Start at some node; add each neighbor to a queue; mark node as visited
 - While the stack isn't empty:
     - Pop a node from the stack; add all neighbors to the stack; mark node as visited
 === DFS
-- Same as BFS, but with Queue instead of Stack
+- Same as BFS, but with Stack instead of a Queue
 == Topological Sort
 Ordering of vertices of an acyclic graph such that for every edge $(u, v)$, u
 comes before v in the ordering. Start by calculating the incoming number of
