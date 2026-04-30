@@ -102,6 +102,7 @@ $Phi = C_1 and C_2 and ... and C_n$ over variables $X={x_1, ..., x_n}$, with $C_
 - In other words, an edge represents that two nodes are mutually exclusive.
 == Vertex Covers (NP-Complete)
 - Given a graph and a number $k$, is there a vertex cover of size $lt.eq k$? A vertex cover is a set of nodes that connect to every edge (i.e. for every edge, one side of the edge is in the set).
+#hline
 == 3-SAT to IS Reduction
 - For every clause, add the 3 literals (variables) of the clause as nodes, connecting them in a triangle; Connect every pair of nodes representing negated assignments ($x_i$ and $not x_i$); Then IS of size $m <==> $ some satisfying assignment for $Phi$
 #hline

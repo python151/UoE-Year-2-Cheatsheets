@@ -55,22 +55,16 @@ Procedure:
 - return Merge($A_1$ and $A_2$)
 
 Can be done in-place by keeping the original arrays and using simple index
-bounds, but still requires 2 scratch spaces of size-$n$ (for the result of the
-merge sort calls).
+bounds, but still requires $Theta(n)$ auxillary memory. $Theta(n log n)$ time in all cases.
 
-Can be done with only one scratch space by forcing into a size divisible by 4,
-so we can merge into a scratch space and then back into the original array.
-
-Takes $Theta(n log n)$ in all cases.
-
-=== Merge
+== Merge
 
 Goes through elements in each array and merges them. Generally takes
 $Theta(n+m)$ in the best and worse case.
 
 #hline
 
-=== Extensible arrays
+== Extensible arrays
 - Like fixed-size arrays, but if we're at max capacity we grow by a factor of $r$ (e.g. $r=2$ means doubling)
 - Worse case for cons, append is $Theta(n)$, amortized to $O(1)$
 - All other operations still at $O(1)$
@@ -80,14 +74,14 @@ $Theta(n+m)$ in the best and worse case.
 
 #hline
 
-=== Sorted arrays (sets and dictionaries)
+== Sorted arrays (sets and dictionaries)
 - Using sorted arrays allows us to use binary search for lookups
 - Gives us $Theta(log n)$ contains / get operations
 - Set / add operations at $Theta(n)$
-=== Hash tables (sets and dictionaries)
+== Hash tables (sets and dictionaries)
 - Using hash tables allows us to reduce our lookup to that of the hash
 - Implementation dependent, but often faster, albiet with high constants
-=== Balanced trees (sets and dictionaries)
+== Balanced trees (sets and dictionaries)
 Balanced Trees (like R-B trees) give us $Theta(log n)$ for all operations.
 
 #hline
@@ -118,20 +112,20 @@ Fixing rules:
 - If the root is colored red, recolor to black.
 
 #hline
-=== Max Heap Definition
+== Max Heap Definition
 - A complete binary tree
 - The value of the root node must be the largest among all its decendent nodes
 - The left and right nodes must have the same property
-=== Max Heap Array Representation
+== Max Heap Array Representation
 If a node is at index $i$, then
 - $"Left"(i) = 2 i + 1$
 - $"Right"(i) = 2 i + 2$
 - $"Parent"(i) = floor.l (i-1)/2 floor.r$
-=== Max-Heap-Insert
+== Max-Heap-Insert
 Add at the end of heap, sift-up to fix (swap with parent until parent is greater), is $Theta(log n)$ in all cases
-=== Extract-Max
+== Extract-Max
 Gets root node value; swaps first and last elements; removes last; sift-up to fix.
-=== Build-Max-Heap
+== Build-Max-Heap
 - Turns an array into a valid max-heap
 - Assume the largest is the given index, if a child is less than the root, swap nodes and recursively call on that subtree.
 - Apply this to all nodes in reverse order (so leaves first), gives $O(n)$ due to a geometric series from the guaruntees of already being fixed (since we start with the leaves)
@@ -151,9 +145,9 @@ Gets root node value; swaps first and last elements; removes last; sift-up to fi
 
 == BFS
 - Start at some node; add each neighbor to a queue; mark node as visited
-- While the stack isn't empty:
-    - Pop a node from the stack; add all neighbors to the stack; mark node as visited
-=== DFS
+- While the queue isn't empty:
+    - Dequeue a node from the queue; add all neighbors to the queue; mark node as visited
+== DFS
 Same as BFS, but with Stack instead of a Queue
 
 #hline
