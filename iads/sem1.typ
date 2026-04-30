@@ -1,3 +1,9 @@
+#let hline = [
+    #v(-.2cm);
+    #line(start: (-1%, 0%), length: 100%);
+    #v(-.2cm);
+]
+
 == Little-o and $omega$
 
 $ f = o(g) <==> forall C > 0 exists N > 0 $
@@ -24,6 +30,8 @@ $ T(n) = cases(
     Theta(f(n)) "if" c > epsilon
 ) $
 
+#hline
+
 == ExpMod
 
 ```python
@@ -35,6 +43,8 @@ def ExpMod(a, n, m):
             return (d*d) % m
         return (d*d*a) % m
 ```
+
+#hline
 
 == Merge Sort
 
@@ -58,6 +68,8 @@ Takes $Theta(n log n)$ in all cases.
 Goes through elements in each array and merges them. Generally takes
 $Theta(n+m)$ in the best and worse case.
 
+#hline
+
 === Extensible arrays
 - Like fixed-size arrays, but if we're at max capacity we grow by a factor of $r$ (e.g. $r=2$ means doubling)
 - Worse case for cons, append is $Theta(n)$, amortized to $O(1)$
@@ -66,16 +78,20 @@ $Theta(n+m)$ in the best and worse case.
 - Restricting lists to only push and pop (append and getting / removing the last item) is a stack
 - Restricting lists to only dequeue and pop (append and getting / removing the first item) is a queue
 
-== Sets and Dictionaries
-=== Sorted arrays
+#hline
+
+=== Sorted arrays (sets and dictionaries)
 - Using sorted arrays allows us to use binary search for lookups
 - Gives us $Theta(log n)$ contains / get operations
 - Set / add operations at $Theta(n)$
-=== Hash tables
+=== Hash tables (sets and dictionaries)
 - Using hash tables allows us to reduce our lookup to that of the hash
 - Implementation dependent, but often faster, albiet with high constants
-=== Balanced trees
-- Balanced Trees (like R-B trees) give us $Theta(log n)$ for all operations.
+=== Balanced trees (sets and dictionaries)
+Balanced Trees (like R-B trees) give us $Theta(log n)$ for all operations.
+
+#hline
+
 == Bucket-list Hashing
 - Use a standard hashing function into a fixed-length array
 - When we have a collision, add to list
@@ -86,6 +102,9 @@ $Theta(n+m)$ in the best and worse case.
 == Perfect Hashes
 - Have a hash function that's a perfect bijection (1-to-1 mapping)
 - Only possible in general for fixed-sized spaces, but $Theta(1)$ for all operations in the worst case.
+
+#hline
+
 == Ordered-binary trees (or Binary Search Tree / BST)
 Binary tree where the left side is always less than the key in the root, and right side always greater than key in the root
 == Red-black trees
@@ -97,20 +116,21 @@ Rules:
 Fixing rules:
 - Red uncle rule: if a red node has a red uncle, both parent and uncle are recolored black, and the grandparent red, continue recursively
 - If the root is colored red, recolor to black.
-== Max heaps
-=== Definition:
+
+#hline
+=== Max Heap Definition
 - A complete binary tree
 - The value of the root node must be the largest among all its decendent nodes
 - The left and right nodes must have the same property
-=== Array representation
+=== Max Heap Array Representation
 If a node is at index $i$, then
 - $"Left"(i) = 2 i + 1$
 - $"Right"(i) = 2 i + 2$
 - $"Parent"(i) = floor.l (i-1)/2 floor.r$
 === Max-Heap-Insert
-- Add at the end of heap, sift-up to fix (swap with parent until parent is greater), is $Theta(log n)$ in all cases
+Add at the end of heap, sift-up to fix (swap with parent until parent is greater), is $Theta(log n)$ in all cases
 === Extract-Max
-- Gets root node value; swaps first and last elements; removes last; sift-up to fix.
+Gets root node value; swaps first and last elements; removes last; sift-up to fix.
 === Build-Max-Heap
 - Turns an array into a valid max-heap
 - Assume the largest is the given index, if a child is less than the root, swap nodes and recursively call on that subtree.
@@ -118,17 +138,26 @@ If a node is at index $i$, then
 == HeapSort
 - Use Build-Max-Heap (O(n)), then Extract-Max ($O(log n)$ each time) one by one, getting a $O(n + n log n) = O(n log n)$ algorithm.
 - Max-Insert-Sort works by inserting sequentially ($O(n log n)$) and doing the same.
+
+#hline
+
 == QuickSort
 - Split $A$ on some element (usually the last), putting all elements less than the parititon element before it, and all elements greater than the partition after it
-- Quicksort each side of the array in-place (split from the new position of the parition element)
+- QuickSort each side of the array in-place (split from the new position of the parition element)
 - Partition can be done in-place at $O(n)$ time and $O(1)$ space
 - $Theta(n log n)$ time best and average case, $Theta(n^2)$ in the worst case.
+
+#hline
+
 == BFS
 - Start at some node; add each neighbor to a queue; mark node as visited
 - While the stack isn't empty:
     - Pop a node from the stack; add all neighbors to the stack; mark node as visited
 === DFS
-- Same as BFS, but with Stack instead of a Queue
+Same as BFS, but with Stack instead of a Queue
+
+#hline
+
 == Topological Sort
 Ordering of vertices of an acyclic graph such that for every edge $(u, v)$, u
 comes before v in the ordering. Start by calculating the incoming number of
@@ -138,3 +167,5 @@ edges for each node. Initialize a queue (or stack) of nodes with 0-edges (S),
     - Assign an index to the node and increment counter
     - Remove node from consideration, and update edge counts, add to S as needed
 In total this gives us an $O(|V| + |E|)$ algorithm.
+
+#hline
