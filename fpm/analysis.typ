@@ -299,6 +299,18 @@ Definitions of monotonocity are similar for that of sequences.
 (*Lagrange Error Bound*) $ R_n = M/(n+1)! (x - x_0)^(n+1) gt.eq |f(x) - P_n^(f, x_0)(x)| $
 ])
 
+#grouped()[
+=== Useful Things from Workshops (Lipschitz Functions)
+(*Workshop 6 Q6*) A Lipschitz function is a function such that for all $x_1, x_2$ in its domain,
+    there exists $L>0$ such that, $|f(x_1) - f(x_2)| lt.eq L|x_1 - x_2|$. All
+    Lipschitz functions are continuous.
+
+(*Workshop 6 Q7*) A Lipschitz with $L < 1$ is called a contraction. Contractions have a single fixed unique fixed point (a point such that $f(x) = x$).
+
+(*Workshop 10 Q5*) $f: RR -> RR$ that are differentiable functions with bounded
+    $f'$ are Lipschitz functions.
+]
+
 #grouped([
 === Selected Taylor Series
 $ e^x = sum_(n=1)^infinity (x^n)/(n!) = 1 + x + (x^2)/(2!) + ... $
@@ -315,4 +327,5 @@ $ arccos x = pi/2 - arcsin x $
 $ sinh x = (e^x - e^(-x))/2 $
 $ cosh x = (e^x + e^(-x))/2 $
 ])
+
 

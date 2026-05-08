@@ -124,7 +124,7 @@ Suppose that $H lt.eq G$ and $H$ is finite, then
 #grouped([
 Assume $G$, $H$, and $K$ are groups with operations $*$, $dot$, and $times.circle$ respectively.
 
-$ker phi := "Pre-image of" epsilon "for" phi$
+$ker phi := "Pre-image of" epsilon "for" phi$ (note $ker phi = C(epsilon)$ and is thus a subgroup of G)
 
 === Group Homomorphisms
 
@@ -241,6 +241,23 @@ Let $G$ be a group and let $X$ be a set. Then
 3. If the action is faithful, then $phi$ gives an isomorphism of $G$ with $im phi lt.eq "bij" X$
 
 (*Cayley's Thoerem*) Every finite group is isomorphic to a subgroup of a symmetric group.
+]
+
+#grouped()[
+=== Useful Things From Workshops
+(*Workshop 1 Q2*) $(g dot h)^(-1) = h^(-1) dot g^(-1)$
+
+(*Workshop 1 Q4*) $(g dot h dot g^(-1))^(n) = g dot h^(n) dot g^(-1)$
+
+(*Workshop 5 Q5*) If $theta: G -> H$ is a homomorphism, then $|G| = |ker theta| |im theta|$
+
+(*Workshop 5 Q9*) Define $G\/N$ as the set of all cosets of $N$ in $G$.
+
+(*Workshop 5 Q12*) Let $G$ and $H$ be groups and $theta: G -> H$ be a homomorphism $G\/ker theta$ is isomorphic to $im theta$.
+
+(*Workshop 7 Q4*) $"Stab" x$ is a subgroup of $G$
+
+(*Workshop 7 Q5*) $"Fix"(g) = "Fix"(g^(-1))$
 ]
 
 
