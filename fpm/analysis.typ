@@ -1,7 +1,7 @@
 #import "utils.typ": grouped
 
 #let grouped_internal(content, color: black) = grouped(content, color: color)
-#let grouped(content, color: black) = grouped_internal(content, color: color)
+#let grouped(content, color: red) = grouped_internal(content, color: color)
 // Change defaults for this file in this function ^^^
 
 = Analysis
@@ -297,5 +297,22 @@ Definitions of monotonocity are similar for that of sequences.
     point $x_0 in (a, b)$, then the taylor polynomial of degree $n$ at $x_0$ is
     $ P_n^(f, x_0) (x) = f_(x_0) + sum_(k=1)^n (f^(k)(x_0))/(k!) (x - x_0)^k $
 (*Lagrange Error Bound*) $ R_n = M/(n+1)! (x - x_0)^(n+1) gt.eq |f(x) - P_n^(f, x_0)(x)| $
+])
+
+#grouped([
+=== Selected Taylor Series
+$ e^x = sum_(n=1)^infinity (x^n)/(n!) = 1 + x + (x^2)/(2!) + ... $
+$ ln(1-x) = - sum_(n=1)^infinity (x^n)/n = -x - (x^2)/2 - (x^3)/3 - ... $
+$ (1+x)^alpha = sum_(n=0)^infinity mat(alpha; n) x^n $
+$ mat(alpha; n) = ((alpha)(alpha-1)...(alpha-n+1))/(n!) $
+$ sin x = sum_(n=0)^infinity ((-1)^n x^(2n+1)) /((2n+1)!) = x - (x^3)/(3!) +
+    (x^5)/(5!) - ... $
+$ cos x = sum_(n=0)^infinity ((-1)^n x^(2n)) /((2n)!) = 1 - (x^2)/(2!) +
+    (x^4)/(4!) - ... $
+$ arcsin x = sum_(n=0)^infinity (2n!)  / (4^n (n!)^2 (2n+1)) x^(2n+1) forall |x|
+    lt.eq 1 $
+$ arccos x = pi/2 - arcsin x $
+$ sinh x = (e^x - e^(-x))/2 $
+$ cosh x = (e^x + e^(-x))/2 $
 ])
 
