@@ -52,7 +52,10 @@ H$.
 
 - $o(g)$ for $g in G$ is called the "order of the element g" and is the smallest number which $g^n = e$. If $g^n eq.not e$ for all $n lt.eq |G|$, then we say "the element g is of infinite order".
 - In a finite group, all elements have finite order.
-- In a finite group $g^k = -1$ for some $k$, namely $o(g)-1$
+- In a finite group, $forall g in G. o(g) | |G|$
+- In a finite group, if some $p | |G|$, then some $g in G$ exists s.t. $o(g) =
+    p$ (Cauchy's theorem)
+- $o(g,h) = "lcm"(o(g), o(h))$
 ])
 
 == Common Groups and Their Properties
@@ -85,13 +88,18 @@ $ a^(phi(n)) eq.triple 1 mod n text("and to make FLT,") phi(p) = p-1 $
 #grouped([
 === Symmetries
 
-#lorem(100)
+$D^n$ represents the Dihedral group (symmetries of a regular n-gon). In effect, this is $e$ for the identity, $h$
+    for a reflection, and $g$ for a $360/n deg$ rotation, and each of their combinations. With $h^2 = e$ and
+    $g^n = e$. For instance, the group for $n=3$ is ${e, g, g dot g, h, g dot h, h dot g}$
 ])
 
 #grouped([
 === Permutations
 
-#lorem(60)
+$S_n$ represents the permutation group of size $n$. Consider $s in S_n$, a mapping
+    like $s: {0, 1, ..., n-1} -> {0, 1, ..., n-1}$. These mappings are often split
+    into sets of loops, for instance, $(1 2 3 4) (5 7)$ represents $1 -> 2 ->
+    3 -> 4 -> 1$ and $5 -> 7 -> 5$, with $6 -> 6$ being implied.
 ])
 
 == Cyclic groups and subgroups
@@ -115,6 +123,8 @@ Suppose that $H lt.eq G$ and $H$ is finite, then
 == Group Morphisms
 #grouped([
 Assume $G$, $H$, and $K$ are groups with operations $*$, $dot$, and $times.circle$ respectively.
+
+$ker phi := "Pre-image of" epsilon "for" phi$
 
 === Group Homomorphisms
 
@@ -179,5 +189,59 @@ defines an equivilence relation on G. The equivilence classes are the orbits of 
 ])
 
 == Counting and Cayley
+
+#grouped()[
+=== Polya Counting
+
+(*Definition of Fixed set*) $"Fix"(g) = {x in X | g dot x = x}$
+
+(*Polya Counting*) _the number of orbits in _$X = 1/(|G|) sum_(g in G) |"Fix"(g)|$
+]
+
+
+#grouped()[
+=== Conjugacy and the Class Equation
+(*Conjugate Actions*) The action of a group on itself is called the conjugate
+    action.
+
+(*Conjugacy Class*) The orbits of the conjugacy action are the conjugacy classes.
+
+(*Centralizer*) $C(g) := {h in G | g h = h g}$
+
+(*Centre of Group*)  The center of the group $G$ is $C(G) := {g in G | g h = h g
+"for all" h in G}$. If $g in C(G)$, $g$ is "central".
+
+(*Corollaries*)
+- For all $g in G$ the centralizer $C(g)$ is a subgroup of $G$
+- $C(G)$ is a subgroup of $G$.
+- If $G$ is finite and $g in G$, then $("the number of conjugates of G") times
+    |C(g)| = |G|$
+- ${e}$ is always a conjugacy class of $G$.
+- ${g}$ is a conjugacy class $<==> g in C(G)$. Hence $C(G)$ is the union of all
+    one-element conjugacy classes.
+
+(*Class equation*) Say $G$ is a finite group with conjugacy classes $"Conj"_i$, $i
+= 1, ..., k$.
+1. $|"Conj"_i|$ divides $|G|$.
+2. $|G| = sum_(i = 1)^k |"Conj"_i|$
+
+(*Prime order fuckery*) If $|G| = p^k$, where $p$ is prime, then $|G(G)| gt.eq
+    p$ and every group $G$ of order $p^2$ is abelian.
+]
+
+#grouped()[
+=== Cayley's Theorem
+$ "bij"(X) := {"bijections" X -> X} $
+
+- If $G$ acts on the set $X$, then for all $g in G$, the map $f_g : X -> X$ defined as $x -> g dot x$ is a bijection.
+
+Let $G$ be a group and let $X$ be a set. Then
+1. An action of $G$ on $X$ is equivilent to a group homomorphism $phi : G -> "bij"(X)$
+2. The action is faithful $<==> phi "is injective"$.
+3. If the action is faithful, then $phi$ gives an isomorphism of $G$ with $im phi lt.eq "bij" X$
+
+(*Cayley's Thoerem*) Every finite group is isomorphic to a subgroup of a symmetric group.
+]
+
 
 

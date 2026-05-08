@@ -122,10 +122,25 @@ then, $a_n -> a$ as $n -> infinity$
 
 #grouped([
  === Monotone Sequences
+A sequence is *monotone* if it is always increasing or decreasing.
 
+A monotone sequence which is bounded must converge (we must only prove bounded
+    above if it's increasing and vice-versa). An unbounded monotone
+    sequence goes to either $infinity$ or $-infinity$ (an increasing sequence to
+    $infinity$ and vice-versa.)
 ])
 #grouped([
 === Subsequences
+A subsequence of a sequence is a sequence where we only pick some
+    terms from that sequence. Any subsequence of a convergent sequence is
+    convergent, the same is not true for divergent sequences.
+
+- There exists $t in RR$ such that $forall epsilon > 0$ there exists infinitely
+    many $n in N$ such that $|x_n - t| < epsilon <==>$ there exists a
+    subsequence of $(x_n)$ converging to t.
+- The sequence $(x_n)$ is not bounded above $<==>$ there exists a subsequence
+    diverging to $infinity$.
+- If a sequence converges to $L$, every subsequence also converges to $L$.
 ])
 
 == Infinite Series
@@ -228,26 +243,59 @@ $ |x-a| < delta "and" |f(x) - f(a)| < epsilon $
 ])
 #grouped([
 === Extreme and Intermediate Value Theorems
+- (*Extreme Value Theorem*) Let $I subset RR$ be a closed and bounded interval. Let $f: I -> RR$ be continuous on $I$. Then $f$ is bounded on the interval $I$. Then, $m = inf{f(x): x in I}$ has some $f(x_m) = m$ and same for $sup$
+- Let $f: I -> RR$, where $I$ is an open interval. If $f$ is continous at a point $a in I$, and $f(a) > 0$, then for some $delta, epsilon > 0$, we have $ f(x) > epsilon forall x in (a - delta, a + delta) $
+- (*Intermediate Value Theorem*) Let $I$ be a non-degenerate interval and let $f: I -> RR$ be a continous function. If $a, b in I, a < b$ then $f$ attains on the interval $(a, b)$, all values between $f(a)$ and $f(b)$. That is to say given $y_0$ between $f(a)$ and $f(b)$ there exists $x_0 in (a, b)$ such that $f(x_0) = y_0$.
+- (*Balzono's Theorem*) Let $f(x)$ be continuous on $[a, b]$ such that $f(a)f(b) < 0$, then there exists $c in (a, b)$ such that $f(c) = 0$
+- (*Rolle's Thoerem*) Let $f(x)$ be continous on $[a, b]$ and differentiable on $(a, b)$ and $f(a) = f(b)$, then there exists some $c in (a, b)$ such that $f'(c) = 0$
+- If $f: [a, b] -> RR$ is a strictly increasing function, such that $im f$ is an interval,
+    then $f$ is continuous on $[a, b]$
 ])
 #grouped([
 === Limits of Functions
+(*Right-hand limit*)Let $a in RR$ and $I$ be an open interval with left end-point $a$, then
+$ lim_(x->a^+) f(x) = L "if" forall epsilon > 0 exists delta > 0 "such that" $
+$ "if" a < x < a + delta "and" x in I, "then" |f(x) - L| < epsilon $
+(*Limit comparisons*) $f(x) lt.eq g(x) ==> lim_(x -> a) f(x) lt.eq lim_(x->a) g(x)$
 ])
 
 == Differentiability on $RR$
 
 #grouped([
 === Definitions
-])
-#grouped([
-=== Differentiability Theorems
+A function $f: I -> RR$ is differentiable on $RR$ iff
+    $f_I'(x) = lim_(x->a^I) (f(x) - f(a))/(x-a)$ exists for all $a in I$.
+A function $f$ is continiuously differentiable on $I$ if $f_I'$ exists and is
+    continuous on $I$.
+Normal derivitive rules apply.
 ])
 #grouped([
 === Mean Value Theorem
+(*Mean Value Theorem*) If $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then there is $c in (a, b)$ with $a < b$, such that $f(b) - f(a) = f'(c)(b-a)$
+
+(*More General MVT*) If $f, g$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then there is $c in (a, b)$ with $a < b$, such that $f'(c)(g(b) - g(a)) = g'(c)(f(b)-f(a)).$
 ])
 #grouped([
 === Monotone Functions and Inverse Function Theorem
+Definitions of monotonocity are similar for that of sequences.
+
+(*Continuous bijections are monotone*) Let $f$ be a $1-1$ function on $I$. Then $f$ is strictly monotone on $I$ and the inverse function is continuous and strictly monotone on $f(I)$.
+
+(*Inverse function theorem*) Let $f$ be a $1-1$ function, continuous on an open
+    interval $I$. If $a in f(I)$ and $f'$ at the point $f^(-1)(a)$ exists and is
+    non-zero, then $f^(-1)$ is differentiable at $a$ and
+    $ f^(-1)'(a) = 1/(f'(f^(-1)(a))) $
+
+(*L'Hospital's Rule*) If $B = lim_(x->a, x in I)[(f'(x) )/ (g'(x))]$ exists as an
+    extended real number, then $lim_(x->a, x in I) ((f(x))/(g(x))) = lim_(x->a,
+    x in I) ((f'(x)) / (g'(x)))$
 ])
 #grouped([
 === Taylor's Theorem
+(*Taylor's Polynomial of $f$*) Let $n in NN$ and $a < b$ be extended real
+    numbers. If $f : (a, b) -> RR$ is a function differentiable $n$-times at a
+    point $x_0 in (a, b)$, then the taylor polynomial of degree $n$ at $x_0$ is
+    $ P_n^(f, x_0) (x) = f_(x_0) + sum_(k=1)^n (f^(k)(x_0))/(k!) (x - x_0)^k $
+(*Lagrange Error Bound*) $ R_n = M/(n+1)! (x - x_0)^(n+1) gt.eq |f(x) - P_n^(f, x_0)(x)| $
 ])
 
