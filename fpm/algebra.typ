@@ -80,9 +80,12 @@ real coefficients is a member of $text("GL")(n, RR)$.
 
 - This is the additive group of order $n$ under addition and multiplciation respectively, with the elements ${0, 1, ..., n}$
 - For the multiplicitive case it is important that the order ($n$) is prime, otherwise it may fail to be closed.
-- This group is isomorphic to all symmetry and permutative groups of the same order
 - Euler's theorem:
-$ a^(phi(n)) eq.triple 1 mod n text("and to make FLT,") phi(p) = p-1 $
+$ a^(phi(n)) eq.triple 1 mod n text("to make FLT") phi(p) = p-1 $
+Multiple groups multiplied:
+$ ZZ_n times ZZ_m tilde.equiv ZZ_("lcm"(m, n)) times ZZ_(gcd(m, n)) $
+Namely, for coprime $m, n$
+$ ZZ_n times ZZ_m tilde.equiv ZZ_(m n) $
 ])
 
 #grouped([
