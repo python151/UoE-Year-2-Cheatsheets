@@ -88,9 +88,15 @@ $ a^(phi(n)) eq.triple 1 mod n text("and to make FLT,") phi(p) = p-1 $
 #grouped([
 === Symmetries
 
-$D^n$ represents the Dihedral group (symmetries of a regular n-gon). In effect, this is $e$ for the identity, $h$
+$D_n$ represents the Dihedral group (symmetries of a regular n-gon). In effect, this is $e$ for the identity, $h$
     for a reflection, and $g$ for a $360/n deg$ rotation, and each of their combinations. With $h^2 = e$ and
     $g^n = e$. For instance, the group for $n=3$ is ${e, g, g dot g, h, g dot h, h dot g}$
+
+The valency of a vertex is the number of vertices it's connected to. *Symmetries,
+    by definition, conserve valency.* Hence, if a node is the only n-valent
+    vertex, it must be fixed.
+
+Distance is also a preserved quantity (i.e. two nodes that are shortest-path 2 edges apart must stay 2 apart, this also means neighbors are preserved)
 ])
 
 #grouped([
@@ -225,8 +231,17 @@ defines an equivilence relation on G. The equivilence classes are the orbits of 
 1. $|"Conj"_i|$ divides $|G|$.
 2. $|G| = sum_(i = 1)^k |"Conj"_i|$
 
+(*Speical Case of Orbi-Stab for Conjugates*) for $x in G$, $|"Conj"(x)| |C(x)| = |G|$
+
 (*Prime order fuckery*) If $|G| = p^k$, where $p$ is prime, then $|G(G)| gt.eq
     p$ and every group $G$ of order $p^2$ is abelian.
+]
+
+#grouped()[
+(*Conjugacy and Cycle Type*) Two permutations of $S_n$ are conjugate $<==>$ they
+    have the same cycle type.
+
+(*Cycle Type Def*) The cycle type is the length of the cycle.
 ]
 
 #grouped()[

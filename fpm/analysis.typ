@@ -295,7 +295,13 @@ Definitions of monotonocity are similar for that of sequences.
 (*Taylor's Polynomial of $f$*) Let $n in NN$ and $a < b$ be extended real
     numbers. If $f : (a, b) -> RR$ is a function differentiable $n$-times at a
     point $x_0 in (a, b)$, then the taylor polynomial of degree $n$ at $x_0$ is
-    $ P_n^(f, x_0) (x) = f_(x_0) + sum_(k=1)^n (f^(k)(x_0))/(k!) (x - x_0)^k $
+    $ P_n^(f, x_0) (x) = f(x_0) + sum_(k=1)^n (f^(k)(x_0))/(k!) (x - x_0)^k $
+
+(*Taylor's Formula*) Let $n in NN$ and $a < b$ be extended reals. If $f: (a, b)
+    -> RR$ and if $f^(n+1)$ exists on $(a, b)$, then for each $x, x_0 in (a, b)
+    exists c in (x, x_0)$ such that,
+    $ f(x) = P_n^(f, x_0) (x) + (f^(n+1) (c))/((n+1)!) (x - x_0)^(n+1) $
+
 (*Lagrange Error Bound*) $ R_n = M/(n+1)! (x - x_0)^(n+1) gt.eq |f(x) - P_n^(f, x_0)(x)| $
 ])
 
