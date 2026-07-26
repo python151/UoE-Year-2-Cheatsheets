@@ -13,7 +13,7 @@ $ F_(X,Y) = integral_A integral_B f_(X,Y) (x, y) d y d x $
 $ "Cov"(X, Y) = EE[X Y] - EE[X] EE[Y] = EE[(X - EE[X])(Y - EE[Y])] $
 $ X "and" Y "are ind." ==> "Cov"(X, Y) = 0 ("conv. not always true") $
 $ Cov(X, Y) = Cov(Y, X) #h(2em) Cov(X, X) = Var(X) $
-$ Cov(a X + b Y,Z) = a Cov(X, Z) + b Cov(Y, Z) forall a, b in RR $
+$ Cov(a X + b Y + c,Z) = a Cov(X, Z) + b Cov(Y, Z) forall a, b in RR $
 $ "Correlation:" Cor(X, Y) = Cov(X, Y)/sqrt(Var(X) Var(Y)) $
 $ -1 lt.eq Cor(X, Y) lt.eq 1 $
 

@@ -8,7 +8,7 @@ $ Var(a X + b) = a^2 Var(X) $
 === Independence
 
 $ X "and" Y "are independent" #linebreak() <==> EE[X Y] = EE[X] EE[Y]
-#linebreak() <==> Var(X + Y) = Var(X) Var(Y) $
+#linebreak() <==> Var(X + Y) = Var(X) + Var(Y) $
 
 === Linear and Monotone Transformations
 
