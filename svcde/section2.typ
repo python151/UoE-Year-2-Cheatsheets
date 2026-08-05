@@ -63,7 +63,7 @@ $ D(a, b) = abs(mat(f_(x x) (a, b), f_(x y) (a, b);
 f_(x y) (a, b), f_(y y) (a, b))) $
 
 $ D > 0 "and" f_(x x) > 0 => "local min" $
-$ D > 0 "and" f_(x x) > 0 => "local max" $
+$ D > 0 "and" f_(x x) < 0 => "local max" $
 $ D < 0 => "saddle point where the graph crosses a tangent line" $
 $ D = 0 => "inconclusive" $
 
@@ -75,3 +75,11 @@ Say we have $L(x, y, lambda) = f(x, y) - lambda g(x, y)$, where $f$ is what we
 want to maximize and subject to constraints $g(x, y) = 0$. Then any critical
 point of $L$ will be a critical point of $f$ subject to $g$ and $lambda$ is
 called a lagrange multiplier.
+
+=== Distance between a surface and a point
+
+For a surface $F(x, y, z) = 0$, minimize the distance between $P "and" Q$, where
+Q is some point on the plane and $P$ is the (usually known) point we're trying
+to minimize the distance to, subject to the constraint of the surface given
+(often using Lagrange multipliers).
+

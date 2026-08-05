@@ -47,9 +47,8 @@ $ y = C_1 e^(r_1 t) + C_2 e^(r_2 t) $
 
 If the solutions are complex $r_1, r_2$, then
 
-$ y_1 = exp(-b/2a t) $
-
-and similar for $y_2$.
+$ alpha = -b/(2a), quad beta = sqrt(4 a c - b^2)/(2a) $
+$ y(x) = e^(alpha x) (C_1 cos(beta x) + C_2 sin(beta x)) $
 
 === Linear Non-Homogenous ODEs with Constant Coefficients
 

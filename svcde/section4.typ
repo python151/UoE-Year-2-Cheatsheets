@@ -40,11 +40,14 @@ Traverse the curve in the path integral in a counterclockwise direction.
 
 === Curl and Divergence
 
-$ nabla = (dv(, x), dv(, y), dv(, z)) $
-$ "curl" F = nabla times F #h(2em) "div" F = nabla dot F $
+Let $F = (P, Q, R)$,
 
-An *irrotational* field has $"curl" F = (0, 0, 0)$ and a *conservative* field
-has $"div" F = 0$
+$ nabla = (dv(, x), dv(, y), dv(, z)) $
+$ "curl" F = nabla times F = mat(R_y - Q_z; R_x - P_z; Q_x - P_y) #h(2em) "div" F = nabla dot F  $
+
+An *irrotational* field has $"curl" F = (0, 0, 0)$ everywhere in the domain.
+
+A *conservative* field is irrotational and has a simply connected (no holes) domain.
 
 === Surface Integrals
 

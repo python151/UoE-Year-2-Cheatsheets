@@ -13,5 +13,6 @@
   #include "section5.typ"
   #include "section6.typ"
   #include "section7.typ"
+  #include "section8.typ"
 ]
 
