@@ -2,7 +2,7 @@
 #set page(margin: (x: .3cm, y: .3cm, bottom: .3cm),
           width: 297mm, height: 210mm,)
 
-#set text(size: 9pt)
+#set text(size: 8.925pt)
 
 #columns(3, gutter: .5em)[
     #include "section1.typ"

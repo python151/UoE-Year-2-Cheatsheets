@@ -71,3 +71,4 @@ satisfying:
 distribution as $(sqrt(c) dot W (t ))_(t ≥0).$
 - BM is a markov process, so the future depends only on the present.
 
+

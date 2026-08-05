@@ -21,3 +21,12 @@ $ -1 lt.eq Cor(X, Y) lt.eq 1 $
 
 $ "Prop 7.2.1" Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y) $
 $ "Thm 7.22" Cov(X, Y)^2 lt.eq Var(X) Var(Y) $
+
+==== Useful Properties for Counterexamples
+
+#let Cov = "Cov"
+#let Var = "Var"
+#let Cor = "Cor"
+
+$ X=Y "has" Cov(X, Y) = Var(X), Cor(X, Y) = 1, #linebreak() Var(X+Y) = 4 Var(X), Var(X - Y) = 0 $
+$ Y=-X "has" Cor(X, Y) = -1, Var(X+Y)=0, #linebreak() Var(X-Y)=4Var(X) $
