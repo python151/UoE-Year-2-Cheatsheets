@@ -16,3 +16,6 @@
   #include "section8.typ"
 ]
 
+#rotate(-90deg, image("single-page-integral-table.pdf", page: 1, height: 270mm))
+#rotate(-90deg, image("single-page-integral-table.pdf", page: 2, height: 270mm))
+
