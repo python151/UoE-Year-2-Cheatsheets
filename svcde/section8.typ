@@ -66,6 +66,15 @@ each of them is at least as large as the minimum of the radiuses of convergence
 of the power series for $p$ qnd $q$. The coefficients can be determined by
 substitution into the equation.
 
+==== To solve these:
+- Plug in the equations below for $y, y', "and" y''$ in terms of $x$ and $a_n$.
+- Solve for a recurrence relation
+  - Basically just get all of the summations to have the same $x^n$ and try to get the entire equation to work from that
+- Using $a_0$ (and $a_1$ if second-order) as arbitrary constants, write out the
+  first few terms using the recurrence relation.
+- Use the recurrence relation to get an explicit relation in terms of $n$ and $a_0 "and" a_1$ *if asked of you* (they
+  don't always even need you to do this part to get full marks).
+
 ==== Useful Equations for ODEs with Power Series
 
 Around $x=0$,
