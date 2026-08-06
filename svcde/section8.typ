@@ -65,3 +65,13 @@ Further, $y_1$ and $y_2$ are linearly independent, the radius of convergence for
 each of them is at least as large as the minimum of the radiuses of convergence
 of the power series for $p$ qnd $q$. The coefficients can be determined by
 substitution into the equation.
+
+==== Useful Equations for ODEs with Power Series
+
+Around $x=0$,
+
+$ y(x) = sum_(n=0)^infinity a_n x^n $
+$ y'(x) = sum_(n=1)^infinity n a_n x^(n-1) $
+$ y''(x) = sum_(n=2)^infinity (n-1)n a_n x^(n-2) $
+
+
